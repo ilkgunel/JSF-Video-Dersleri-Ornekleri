@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Veritabanından Kayıt Çekme</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputStylesheet library="css" name="cssDosyasi.css"/>
+            <h:dataTable value="#{kayitCek.sorguSonucu}" var="kayitCekObjesi" styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row">
+                <h:column>
+                    <f:facet name="header">
+                        Adı
+                    </f:facet>
+                    <h:outputText value="#{kayitCekObjesi.isim}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Soyadı
+                    </f:facet>
+                    <h:outputText value="#{kayitCekObjesi.soyisim}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        Üniversitesi
+                    </f:facet>
+                    <h:outputText value="#{kayitCekObjesi.universite}"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
