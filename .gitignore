@@ -1,1 +1,13 @@
 /JSFAndApacheShiro/target/
+/FirstEJB/nbproject/private/
+/FirstEJBModule/nbproject/private/
+/FirstEJBModule/dist/
+/FirstEJBModule/build/
+/EJBClient/nbproject/private/
+/EJBClient/build/
+/EJBClient/dist/
+/PassingParameterInJSF/nbproject/private/
+/PassingParameterInJSF/build/
+/PassingParameterInJSF/dist/
+/PassingParameter/nbproject/private/
+/ParameterPassing/nbproject/private/

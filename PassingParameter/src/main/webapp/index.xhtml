@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandButton value="Metot İle Parametre Geçirme" action="#{parameterMBean.writeTheParameter('Bizim Mesasıjımız Budur!')}"/>
+            
+            <h:commandButton value="FParam İle Parametre Geçirme" action="#{parameterMBean.catchTheFParam}">
+                <f:param name="parametre1" value="FParam Parametresi"/>
+            </h:commandButton>
+            
+            <h:commandButton value="FAttribute İle Parametre Geçirme" actionListener="#{parameterMBean.catchTheFAttribute}">
+                <f:attribute name="parametre2" value="FAttrubute Parametresi"/>
+            </h:commandButton>
+            
+            <h:commandButton value="FSetPropertyActionListener İle Parametre Geçirme" action="#{parameterMBean.writeToConsole}">
+                <f:setPropertyActionListener target="#{parameterMBean.messageObject}" value="FSetPropertyActionListener Parametresi"/>
+            </h:commandButton>
+        </h:form>
+    </h:body>
+</html>
+
