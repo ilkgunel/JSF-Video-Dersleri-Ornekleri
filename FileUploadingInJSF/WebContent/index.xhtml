@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"> 
+
+<h:head></h:head> 
+<h:body> 
+	<h:form enctype="multipart/form-data">
+		<h:outputText value="Yüklemek İstediğiniz Dosyayı Seçiniz:" />
+		<h:inputFile id="inputFile" value="#{fileUploadingBean.file}" validator="#{fileUploadingBean.validate}"></h:inputFile>
+		<h:commandButton value="Yükle" actionListener="#{fileUploadingBean.upload}" />
+		<br/>
+		<h:message for="inputFile" style="color:red"/>
+	</h:form>
+</h:body> 
+</html>
