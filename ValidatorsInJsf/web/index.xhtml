@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <title>Validator Tags</title>
+</h:head>
+<h:body>
+   <h:form>
+      <h:panelGrid columns="3">
+         <h:outputText value="İsim Soyisim Giriniz:"/>
+         <h:inputText id="nameSurname" value="#{validatorTagsBean.nameAndSurname}" validatorMessage="20 karakterden fazla ya da 5 karakterden az girdiniz!">
+            <f:validateLength maximum="20" minimum="5"/>
+         </h:inputText>
+         <h:message for="nameSurname" style="color: red"/>
+
+         <h:outputText value="Yaşınızı Giriniz:"/>
+         <h:inputText id="age" value="#{validatorTagsBean.age}" validatorMessage="45 yaşından büyük ya da 18 yaşından küçüksünüz!">
+            <f:validateLongRange maximum="45" minimum="18"/>
+         </h:inputText>
+         <h:message for="age" style="color: red"/>
+
+         <h:outputText value="Maaşınızı Giriniz:"/>
+         <h:inputText id="salary" value="#{validatorTagsBean.salary}" validatorMessage="5000.30'daz fazla ya da 1000.30'dan az!">
+            <f:validateDoubleRange maximum="5000.30" minimum="1000.30"/>
+         </h:inputText>
+         <h:message for="salary" style="color: red"/>
+         
+         <h:outputText value="E-Posta Adresi Giriniz!"/>
+         <h:inputText id="email" value="#{validatorTagsBean.email}" validatorMessage="Geçersiz E-Posta Adresi!">
+            <f:validateRegex pattern="^[A-Za-z0-9-+]+(\.[A-Za-z0-9+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$"/>
+         </h:inputText>
+         <h:message for="email" style="color: red"/>
+      </h:panelGrid>
+      <h:commandButton value="GÖNDER" action="datas.xhtml?faces-redirect=true"/>
+   </h:form>
+</h:body>
+</html>
